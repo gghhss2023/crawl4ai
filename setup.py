@@ -25,10 +25,10 @@ if cache_folder.exists():
     shutil.rmtree(cache_folder)
 
 # Create new folder structure
-crawl4ai_folder.mkdir(exist_ok=True)
-cache_folder.mkdir(exist_ok=True)
+crawl4ai_folder.mkdir(parents=True, exist_ok=True)
+cache_folder.mkdir(parents=True, exist_ok=True)
 for folder in content_folders:
-    (crawl4ai_folder / folder).mkdir(exist_ok=True)
+    (crawl4ai_folder / folder).mkdir(parents=True, exist_ok=True)
 
 version = "0.0.0"  # This will be overridden by pyproject.toml's dynamic version
 try:
